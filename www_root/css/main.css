@@ -1,0 +1,176 @@
+/* 
+ * Main scripts file for the flight schedule website.
+ * Assignment 4, CSCI 1170, Fall 2022
+ * Starter code provided by Dr. Mayra Barrera Machuca
+ */
+
+ /* General body styling, body set up as a grid container */
+body {
+	width: 80vw;
+	margin: 0 auto;
+	display: grid;
+	grid-template-columns: repeat(6, 1fr);
+	grid-template-rows: repeat(5, auto);
+	
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Page banner styling, set to apper on the top row */
+.pg-banner {
+	grid-row: 1/2;
+	grid-column: 1/-1;
+	border-bottom: 5px solid steelblue;
+}
+.header-container {
+	padding: 0 0.5em;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+}
+
+/* Page footer styling, set to apper on the bottom row */
+.pg-footer {
+	padding: 0 0.5em;
+	grid-row: -3/-2;
+	grid-column: 1/-1;
+
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+
+	border-top: 1px solid gold;
+	font-size: smaller;
+}
+
+/* Navigation elements - primary (main nav in the banner), secondary (smaller nav in the banner) and footer nav. */
+.primary-nav {
+	display: flex;
+}
+.primary-nav > a {
+	margin: 0 0 0 1em;
+	color: steelblue;
+	text-decoration: none;
+}
+.primary-nav > a:hover,
+.primary-nav > a:active {
+	color: maroon;
+}
+
+.footer-nav {
+	display: flex;
+}
+.footer-nav > a {
+	margin: 0 0 0 1em;
+	color: steelblue;
+	text-decoration: none;
+}
+.footer-nav > a:hover,
+.footer-nav > a:active {
+	color: maroon;
+}
+
+/* Main content container to include all the flights */
+.container {
+	margin: 10px;
+	min-height: 300px;
+
+	grid-column: 1/5;
+
+	/* Add your styles for the Main container here */
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	row-gap: 7px;
+	column-gap: 13px;
+}
+/* Flight "bag" styling */
+.flights-selection-bag {
+	width: 130%;
+	padding: 10px;
+	background-color: #003B79;
+}
+.flights-selection-bag {
+	color: lightblue;
+}
+/* Flight info boxes */
+.flight-info {
+	width: auto;
+	text-align: center;
+	background-color: lightblue;
+	border: 2px double lightslategrey;
+	font-size: 14px;
+}
+.articleText {
+	color: #003B79;
+}
+.flight-availability-info {
+	color: lightskyblue;
+	background-color: rgb(2, 57, 109);
+	text-align: start;
+}
+
+
+/* A5 code */
+.container{
+	width: 68%;
+}
+#searchContainer form{
+	padding-top: 30px;
+	display: grid;
+	grid-template-columns: 20vw 15vw 20vw;
+	width: 100%;
+	grid-gap: 30px;
+}
+#searchContainer{
+	display: flex;
+	flex-direction: row;
+}
+#inputSearch{
+	height: 25px;
+	border-radius: 5px 5px;
+	margin-left: 100px;
+	padding-left: 10px;
+}
+#findButton{
+	height: 30px;
+	background-color: lightgray;
+	border-radius: 5px 5px;
+	box-shadow: 1px 1px 2px gray;	
+	margin-top: 30px;
+	width: 300px;
+}
+#textLabel {
+	font-size: small;
+	
+}
+#inputSearch {
+	width: 220%;
+}
+
+.flights-selection-bag{
+	margin-top: 10px;
+	position: relative;
+	left: -350px;
+}
+
+
+
+/* for mobile view */
+@media all and (max-width: 840px) {
+	.container {
+		display: grid;
+		grid-template-columns: auto;
+	}
+	.primary-nav {
+		display: none;
+	}
+	h1 {
+		font-size: medium;
+	}
+	.footer-nav {
+		display: none;
+	}
+	footer {
+		flex-direction: row-reverse;
+	}
+}
